@@ -14,4 +14,4 @@ Python-приложение для управления мышью и клави
 pip install -r requirements.txt
 python hand_cursor.py
 ```
-Или использовать уже собранный `hand_cursor.exe` в папке `dist`.
+Или скачайте уже готовый файл `hand_cursor.exe` (не требующий установки) в разделе **Releases** (меню справа на странице GitHub).
