@@ -1,0 +1,25 @@
+# Виртуальное окружение
+.venv/
+venv/
+ENV/
+env/
+
+# Сборки PyInstaller
+build/
+dist/
+*.spec
+
+# Кэш Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Скрытые файлы ОС
+.DS_Store
+Thumbs.db
+
+# Настройки IDE (VSCode, PyCharm)
+.idea/
+.vscode/
