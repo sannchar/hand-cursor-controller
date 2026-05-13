@@ -1,17 +1,39 @@
 # Hand Cursor & Joystick
 
-Python-приложение для управления мышью и клавиатурой (в играх и на ПК) с помощью жестов рук через веб-камеру, используя MediaPipe.
+A Python application for controlling your mouse and keyboard (for gaming and desktop use) via hand gestures using a webcam and MediaPipe.
 
-## Особенности
-*   **Левая рука (Мышь):** Управление курсором, клики, скролл и удержание кнопок.
-*   **Правая рука (Джойстик):** Управление передвижением (WASD) и действиями (клавиши Space, E, 1, 2, 3).
-*   Выбор камеры при запуске (поддержка нескольких камер).
-*   Автоматическая сборка в `.exe`.
+## Features
+*   **Right Hand (Mouse):** Cursor control, left/right clicks, scrolling, and dragging.
+*   **Left Hand (Joystick):** Movement control (WASD) and action keys (Space, E, 1, 2, 3).
+*   Camera selection on startup (supports multiple webcams).
+*   Toggleable keyboard/joystick mode.
+*   Standalone `.exe` build available.
 
-## Запуск
-Вы можете запустить проект через Python:
+## Gestures Guide
+
+### Right Hand (Mouse)
+*   🖐️ **Open Palm:** Cursor follows your palm.
+*   🤏 **Pinch (Thumb + Index):** Left Click / Hold to Drag.
+*   🤏 **Pinch (Thumb + Middle):** Right Click / Camera movement in games.
+*   🤏 **Pinch (Thumb + Ring):** Scroll up/down (move hand vertically while pinching).
+*   ✊ **Fist:** Pause mouse tracking.
+
+### Left Hand (Joystick)
+*   **Move hand UP from center:** W (Hold)
+*   **Move hand DOWN from center:** S (Hold)
+*   **Move hand LEFT from center:** A (Hold)
+*   **Move hand RIGHT from center:** D (Hold)
+*   ✊ **Fist:** Recalibrate the center of the joystick.
+*   🤏 **Pinch (Thumb + Index):** Space (Tap)
+*   🤏 **Pinch (Thumb + Middle):** 1 (Tap)
+*   🤏 **Pinch (Thumb + Ring):** 2 (Tap)
+*   🤏 **Pinch (Thumb + Pinky):** 3 (Tap)
+*   🤙 **Pinky Up (Other fingers down):** E (Tap)
+
+## How to Run
+You can run the project using Python:
 ```bash
 pip install -r requirements.txt
 python hand_cursor.py
 ```
-Или скачайте уже готовый файл `hand_cursor.exe` (не требующий установки) в разделе **Releases** (меню справа на странице GitHub).
+Or simply download the ready-to-use `hand_cursor.exe` from the **[Releases](https://github.com/)** section (on the right side of the GitHub repository page).

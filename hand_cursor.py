@@ -1,26 +1,26 @@
 """
-Hand Cursor — Управление курсором и клавиатурой двумя руками.
+Hand Cursor & Joystick — Control mouse and keyboard with two hands.
 
-ЛЕВАЯ рука — мышь:
-  🖐️  Ладонь                    → курсор следует за ладонью
-  🤏 Щипок (большой + указат.)  → клик / drag
-  🤏 Щипок (большой + средний)  → правый клик / камера
-  🤏 Щипок (большой + безымян.) → скролл
-  ✊ Кулак                      → пауза
+RIGHT Hand — Mouse:
+  🖐️  Open Palm                 → Cursor follows palm
+  🤏 Pinch (Thumb + Index)     → Left Click / Drag
+  🤏 Pinch (Thumb + Middle)    → Right Click / Camera
+  🤏 Pinch (Thumb + Ring)      → Scroll up/down
+  ✊ Fist                      → Pause tracking
 
-ПРАВАЯ рука — ДЖОЙСТИК + действия:
-  Рука ВВЕРХ от центра          → W (удержание)
-  Рука ВНИЗ от центра           → S (удержание)
-  Рука ВЛЕВО от центра          → A (удержание)
-  Рука ВПРАВО от центра         → D (удержание)
-  ✊ Кулак                      → перекалибровка центра
-  🤏 Щипок большой + указат.   → Space (тап)
-  🤏 Щипок большой + средний   → 1 (тап)
-  🤏 Щипок большой + безымян.  → 2 (тап)
-  🤏 Щипок большой + мизинец   → 3 (тап)
-  🤙 Мизинец вверх + ост. вниз → E (тап)
+LEFT Hand — Joystick + Actions:
+  Move UP from center          → W (Hold)
+  Move DOWN from center        → S (Hold)
+  Move LEFT from center        → A (Hold)
+  Move RIGHT from center       → D (Hold)
+  ✊ Fist                      → Recalibrate center
+  🤏 Pinch Thumb + Index       → Space (Tap)
+  🤏 Pinch Thumb + Middle      → 1 (Tap)
+  🤏 Pinch Thumb + Ring        → 2 (Tap)
+  🤏 Pinch Thumb + Pinky       → 3 (Tap)
+  🤙 Pinky up, others down     → E (Tap)
 
-Выход: клавиша Q
+Exit: Press Q
 """
 
 import cv2
@@ -471,26 +471,26 @@ def main():
     sw, sh = _screen_size()
     print(f"[INFO] Screen: {sw}x{sh}")
 
-    print("\n--- Выбор камеры ---")
+    print("\n--- Camera Selection ---")
     try:
         from pygrabber.dshow_graph import FilterGraph
         graph = FilterGraph()
         devices = graph.get_input_devices()
         if devices:
-            print("Доступные камеры:")
+            print("Available cameras:")
             for i, dev_name in enumerate(devices):
                 print(f"  [{i}] {dev_name}")
         else:
-            print("Камеры не найдены или нет доступа к именам.")
+            print("No cameras found or names are inaccessible.")
     except Exception:
-        print("Не удалось получить список камер с именами.")
+        print("Failed to get camera list with names.")
 
-    val = input("\nВведите номер камеры [Нажмите Enter для выбора 0]: ")
+    val = input("\nEnter camera number [Press Enter for 0]: ")
     cam_index = int(val.strip()) if val.strip().isdigit() else 0
 
-    print("\n--- Режим управления ---")
-    print("Включить вторую руку (джойстик WASD и клавиатура)?")
-    val_kb = input("Введите 'y' (Да) или 'n' (Нет) [Нажмите Enter для 'y']: ")
+    print("\n--- Control Mode ---")
+    print("Enable second hand (WASD Joystick & Keyboard)?")
+    val_kb = input("Type 'y' (Yes) or 'n' (No) [Press Enter for 'y']: ")
     global ENABLE_KEYBOARD_HAND
     if val_kb.strip().lower() in ['n', 'net', 'no', '0', 'н', 'нет']:
         ENABLE_KEYBOARD_HAND = False
